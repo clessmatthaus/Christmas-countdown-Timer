@@ -1,0 +1,157 @@
+    @font-face {
+        font-family: 'digital-clock-font';
+        src: url('digital-7.ttf');
+    }
+    
+    body {
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        background-image: url('./img/back.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+    }
+    
+    .overlay {
+        position: absolute;
+        font-family: 'digital-clock-font';
+        top: 10px;
+        width: 100%;
+        height: 80px;
+        left: 0;
+        right: 0;
+        bottom: 30px;
+        background-color: transparent;
+    }
+    
+    .rebours-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .textx {
+        font-size: 4rem;
+        font-family: 'digital-clock-font';
+        color: rgb(20, 1, 1);
+        box-shadow: -4px 2px 2px 2px rgb(40, 250, 103);
+    }
+    
+    .title {
+        width: 100%;
+        text-align: center;
+        color: green;
+        font-family: 'playfair Dsplay', serif;
+        background: transparent;
+        font-size: 2rem;
+        line-height: 3rem;
+        text-shadow: -2px 1px 1px white;
+    }
+    
+    .rebours-container>div {
+        margin: 0 3rem;
+        text-align: center;
+        border: 1px solid white;
+        padding: 20px 40px;
+        border-radius: 12px;
+        background-color: black;
+        box-shadow: -6px 2px 2px rgb(0, 255, 64);
+        cursor: pointer;
+        margin-top: -2px;
+    }
+    
+    .cal {
+        color: white;
+        font-family: 'digital-clock-font';
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+    
+    .division {
+        margin-left: 76px;
+        display: inline-flex;
+        margin-bottom: -8px;
+        margin-top: 30px;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .dynamique span {
+        font-family: 'digital-clock-font';
+        color: rgb(24, 206, 18);
+        font-size: 40px;
+    }
+    
+    .static {
+        font-family: 'digital-clock-font';
+        color: white;
+        background-color: red;
+        font-size: 3rem;
+        cursor: pointer;
+        box-shadow: -2px 4px 6px rgb(238, 146, 146);
+    }
+    
+    li {
+        list-style-type: none;
+    }
+    
+    #days {
+        color: white;
+    }
+    
+    #hours {
+        color: red;
+    }
+    
+    #minutes {
+        color: greenyellow;
+    }
+    
+    #seconds {
+        color: greenyellow;
+    }
+    
+    .dynamique span::after {
+        content: " ";
+        position: absolute;
+        left: 100px;
+        height: 8%;
+        width: 100%;
+        background-color: white;
+        border-left: 2px solid white;
+        animation: typing 1.5s steps(29) infinite;
+    }
+    
+    @keyframes typing {
+        100% {
+            left: 100%;
+            margin: 0 -35px 0 -35px;
+        }
+    }
+    
+    @media(max-width:992px) {
+        .rebours-container>div {
+            margin: 0 1rem;
+        }
+    }
+    
+    @media(max-width:767px) {
+        .rebours-container {
+            flex-wrap: wrap;
+        }
+        .rebours-container>div {
+            margin: 1rem auto;
+            max-width: 150px;
+        }
+        .title {
+            font-size: 3rem;
+            line-height: 2.5rem;
+            margin: 10px 0;
+        }
+        .title span {
+            letter-spacing: 1rem;
+        }
+    }
